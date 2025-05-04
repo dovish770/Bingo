@@ -1,13 +1,13 @@
 import request from 'supertest';
 import express from 'express';
-import {AddProductToCart, CreateObjectUser, login} from '../src/services/userService';
-import {addProductToCartController, loginUserHandler, registerUserHandler} from '../src/controllers/userController';
-import {IOrder, IProduct, IProductInOrder, IUser} from "../src/types";
-import {getAllProductsHandler} from "../src/controllers/ProductController";
-import {GetAllProducts} from "../src/services/ProductService";
-import {verifyToken} from "../src/middlewares/verifyToken";
-import {addPurchaseToDatabaseController} from "../src/controllers/OrderController";
-import {ERegion} from "../src/types/enums";
+import {AddProductToCart, CreateObjectUser, login} from '../services/userService';
+import {addProductToCartController, loginUserHandler, registerUserHandler} from '../controllers/userController';
+import {IOrder, IProduct, IProductInOrder, IUser} from "../types";
+import {getAllProductsHandler} from "../controllers/ProductController";
+import {GetAllProducts} from "../services/ProductService";
+import {verifyToken} from "../middlewares/verifyToken";
+import {addPurchaseToDatabaseController} from "../controllers/OrderController";
+import {ERegion} from "../types/enums";
 import {Error} from 'mongoose';
 
 
