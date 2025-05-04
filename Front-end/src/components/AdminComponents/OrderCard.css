@@ -1,0 +1,57 @@
+.order-card-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+.order-card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.order-name,
+.order-region,
+.order-total-amount {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width: 200px;
+}
+
+.order-card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.create-shipment-button {
+    background-color: #9a8b5f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.create-shipment-button:hover {
+    background-color: #786848;
+}
+
+.shipment-status {
+    color: #888;
+    font-size: 1rem;
+}

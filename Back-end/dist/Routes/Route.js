@@ -1,0 +1,23 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const userController_1 = require("../controllers/userController");
+const ProductController_1 = require("../controllers/ProductController");
+const verifyToken_1 = require("../middlewares/verifyToken");
+const OrderController_1 = require("../controllers/OrderController");
+const router = express_1.default.Router();
+router.route("/register").post(userController_1.registerUserHandler);
+router.route("/login").post(userController_1.loginUserHandler);
+router.route("/products").get(verifyToken_1.verifyToken, ProductController_1.getAllProductsHandler);
+router.route("/products/addItemToCart").post(verifyToken_1.verifyToken, userController_1.addProductToCartController);
+router.route("/orders").post(verifyToken_1.verifyToken, OrderController_1.addPurchaseToDatabaseController);
+router.route("/orders").get(verifyToken_1.verifyToken, OrderController_1.getAllOrdersController);
+router.route("/order/:userName").get(verifyToken_1.verifyToken, OrderController_1.getOrderByIdController);
+router.route("/orders/updateShippingStatus").post(verifyToken_1.verifyToken, OrderController_1.updateShippingStatusInOrderController);
+router.route("/orders/updateInventory").post(verifyToken_1.verifyToken, OrderController_1.InventoryUpdateForManagerController);
+router.route("/users/getById/:userId").get(verifyToken_1.verifyToken, userController_1.getUserByIdController);
+router.route("/users").get(verifyToken_1.verifyToken, userController_1.getAllUsersController);
+exports.default = router;
