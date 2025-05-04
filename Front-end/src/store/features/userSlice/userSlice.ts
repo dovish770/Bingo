@@ -6,6 +6,8 @@ import { IUser } from "../../../types";
 import axios from "../../../axiosConfig/axiosConfig";
 import { addToCartM } from "../../../service/cartService";
 
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 const initialState: UserState = {
     user: null,
     status: "idle",
@@ -21,7 +23,7 @@ export const fetchGetUserById = createAsyncThunk<
 >("users/fetchById", async ({ userId }, thunkAPI) => {
   try {
     const response = await axios.get(
-      `http://localhost:3000/api/users/getById/${userId}`,
+      BASE_URL + `/api/users/getById/${userId}`,
       { withCredentials: true }
     );
     return response.data.data;
@@ -37,7 +39,7 @@ export const fetchGetAllUsers = createAsyncThunk<
 >("users/fetchById", async (_, thunkAPI) => {
   try {
     const response = await axios.get(
-      `http://localhost:3000/api/users`,
+      BASE_URL + `/api/users`,
       { withCredentials: true }
     );
     return response.data.data;

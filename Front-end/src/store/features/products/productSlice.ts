@@ -1,6 +1,9 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "../../../axiosConfig/axiosConfig";
 import { IProduct } from "../../../types";
+
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+
 interface ProductState {
   data: IProduct[];
   loading: boolean;
@@ -12,7 +15,7 @@ export const fetchDataAllProducts = createAsyncThunk<
   { rejectValue: string }
 >("allProducts/fetchData", async (_, thunkAPI) => {
   try {
-    const response = await axios.get(`http://localhost:3000/api/products`, {
+    const response = await axios.get(BASE_URL + `/api/products`, {
       withCredentials: true,
     });
     return response.data.data;
@@ -29,7 +32,7 @@ export const fetchUpdateInventory = createAsyncThunk<
 >("updateInventory/fetchData", async ({ productId, amount }, thunkAPI) => {
   try {
     const response = await axios.post(
-      `http://localhost:3000/api/orders/updateInventory`,
+      BASE_URL +`/api/orders/updateInventory`,
       { productId, amount },
       {
         withCredentials: true,
