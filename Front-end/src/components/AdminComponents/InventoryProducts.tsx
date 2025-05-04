@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { IProduct } from "../../types";
 import { useAppDispatch } from "../../store/hook";
 import { fetchUpdateInventory } from "../../store/features/products/productSlice";

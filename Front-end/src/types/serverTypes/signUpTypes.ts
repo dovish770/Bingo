@@ -1,9 +1,7 @@
-import { IUser } from "..";
-
 export interface SignInData {
-    message: string;
-    data: IUser
-    success: boolean
+    username: string;
+    email: string;
+    password: string
   }
 
   export interface SignInResponse {

@@ -1,10 +1,5 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import Login from "./pages/login/Login";
-import { Provider } from "react-redux";
-import { store } from "./store/store";
 import { Route, Routes } from "react-router-dom";
 import SignIn from "./pages/signUp/SignUp";
 import PrivateRouteToken from "./PrivateRoute/PrivateRouteToken";
@@ -13,6 +8,7 @@ import PrivateRouteAdmin from "./PrivateRoute/PrivateRouteAdmin";
 import AdminPage from "./pages/Admin/AdminPage/AdminPage";
 import Products from "./pages/Admin/Products/Products";
 import Orders from "./pages/Admin/Orders/OrdersPage";
+
 function App() {
   return (
     <>
